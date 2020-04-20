@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 100px;
+            height: 180px;
+            /* 設定子元素在 3D 空間內 */
+            transform-style: preserve-3d;
+            position: relative;
+            /* 整張卡片的旋轉 */
+            /* 一開始先蓋排 */
+            transform: rotateY(180deg);
+            /* 0.5 秒翻轉動畫 */
+            /* 讓它有轉場效果 */
+            /* 指定 transform 轉 0.5秒，只有 0，就寫 .5秒就好*/
+            transition: transform .5s;
+        }
+
+        .front {
+            /* 這裡的 background-image 用程式算出來，所以先刪掉 */
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            /* 正面、背面都要設定 */
+            position: absolute;
+        }
+
+        .back {
+            width: 100%;
+            height: 100%;
+            background-image: url(./撲克牌/Red_back.JPG);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            /* 把背面的 div 轉到 front 後面貼齊 */
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <script src="jquery-3.5.0.min.js"></script>
+</body>
+
+</html>
