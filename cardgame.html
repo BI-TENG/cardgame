@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            width: 500px;
+            height: 800px;
+            /* border: 1px solid black; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
         .card {
             width: 100px;
             height: 180px;
@@ -60,6 +70,13 @@
                 <div class="front"></div>
                 <div class="back"></div>
             </div>`)
+            }
+
+            for (let i = 0; i < $(".card").length; i++) {
+                let num = i % ($(".card").length / 2) + 1;
+                $(".card").eq(i).find(".front").css("background-image", `url(./撲克牌/${num})H.jpg`)
+
+
             }
         })
 
