@@ -76,7 +76,9 @@
                 let num = i % ($(".card").length / 2) + 1;
                 $(".card").eq(i).find(".front").css("background-image", `url(./撲克牌/${num})H.jpg`)
 
-
+                // 隨機抽一張牌，放到目前迴圈的牌後面
+                let target = Math.floor(Math.random() * $(".card").length);
+                $(".card").eq(target).insertAfter($(".card").eq(i))
             }
         })
 
