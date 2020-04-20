@@ -19,6 +19,8 @@
             /* 讓它有轉場效果 */
             /* 指定 transform 轉 0.5秒，只有 0，就寫 .5秒就好*/
             transition: transform .5s;
+            float: left;
+            margin: 10px;
         }
 
         .front {
@@ -47,7 +49,21 @@
 </head>
 
 <body>
+    <div id="game"></div>
     <script src="jquery-3.5.0.min.js"></script>
+    <script>
+        $(function () {
+            // 產生 16 張 卡片
+            for (let i = 0; i < 16; i++) {
+                $("#game").append(`
+            <div class="card">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>`)
+            }
+        })
+
+    </script>
 </body>
 
 </html>
