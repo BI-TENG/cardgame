@@ -71,7 +71,7 @@
                 <div class="back"></div>
             </div>`)
             }
-
+            // 顯示花色
             for (let i = 0; i < $(".card").length; i++) {
                 let num = i % ($(".card").length / 2) + 1;
                 $(".card").eq(i).find(".front").css("background-image", `url(./撲克牌/${num}H.jpg)`)
